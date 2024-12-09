@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1994 Elmwood Fire</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWI_kUJA3H8EZMrV9DJ3wCFEqahmlI7FAPig&s');
+            color: white; 
+            font-family: Arial, sans-serif; 
+        }
+        h1 {
+            font-size: 100px;
+            color: lightseagreen;
+            text-align: center; 
+        }
+        p {
+            color: tomato;
+            margin: 20px; 
+            font-size: 18px; 
+        }
+        #newParagraph {
+            display: none;
+        }
+        #dropdownMenu {
+            display: none;
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showParagraph() {
+            document.getElementById('newParagraph').style.display = 'block';
+            document.getElementById('dropdownMenu').style.display = 'block';
+        }
+
+        function displayParagraph() {
+            // Hide all the paragraphs first
+            var paragraphs = document.querySelectorAll('.investigation-paragraph');
+            paragraphs.forEach(function(paragraph) {
+                paragraph.classList.add('hidden');
+            });
+
+            // Show the selected paragraph
+            var selectedValue = document.getElementById('options').value;
+            var selectedParagraph = document.getElementById(selectedValue);
+            if (selectedParagraph) {
+                selectedParagraph.classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>1994 Elmwood Fire</h1>
+    <img src="https://www.thenewstribune.com/latest-news/tm57on/picture287769180/alternates/LANDSCAPE_1140/fire%20whitman%20lake%202.jpg" alt="The house">
+
+    <p>
+        It was over a year ago on June 24th, 1994, that a fire broke out at approximately 3:46 AM at 323 Elmwood Drive. The cause of the fire is still under investigation, but the result of the blaze sent shockwaves across the Elmwood community. Jim and Tina Grover, along with their two daughters, Linda and Poppy, have been missing since the fire on that warm June night. Interestingly enough, their nightwear was found charred in the remnants of what were their beds, and neighbors report that they did not witness the family leave the property as the fire engulfed the house. It is almost as if the family disappeared and vanished into thin air. The family and community have spent hundreds of hours searching for them and finding clues to the Grovers' whereabouts. However, the community police have called off the search and labeled this a cold case. The community remains hopeful and continues to hold vigils in memory of the Grover family. Any new information or leads are always welcomed by the local authorities, who still keep an open file on the case. The mystery of the Elmwood fire and the Grover family's disappearance remains one of the most talked-about events in the town's history. It is our job to investigate and find clues to solve this case.
+    </p>
+
+    <button onclick="showParagraph()">Start investigation</button>
+    <p id="newParagraph">
+        You arrive at 323 Elmwood Drive to start your investigation. You notice a weird aura around the property that sends shivers and chills down your spine. However, you put on a brave face and walk up the path towards the front door. You are faced with a few different options. Which one do you pick?
+    </p>
+    
+    <div id="dropdownMenu">
+        <label for="options">Choose your action:</label>
+        <select id="options" onchange="displayParagraph()">
+            <option value="">Select an option</option>
+            <option value="option1">Go through the front door</option>
+            <option value="option2">Talk to the neighbors</option>
+            <option value="option3">investigate the back yard</option>
+        </select>
+    </div>
+
+    <div id="option1" class="investigation-paragraph hidden">
+        <p>
+            The front door is locked and is being blocked by debris. Try another option.
+    </div>
+
+    <div id="option2" class="investigation-paragraph hidden">
+        <p>
+            The neighbors seem wary of talking about the fire, but after some convincing, one of them tells you that they saw a shadowy figure leaving the house that night. However, the person couldn’t identify who it was due to the darkness. Another neighbor mentions that they hear voices coming from the cellar entrence located in the back yard, and that it is the only way into the house.
+        </p>
+    </div>
+
+    <div id="option3" class="investigation-paragraph hidden">
+        <p>
+            While searching the backyard, you stumble across a half-burned notebook that you believe is the young daughter Poppy's diary. Only one page is legible and it contains a drawing of the family with a showdowy figure in the background. Above the figure the words "GET OUT" are scribbled mulitple times. You put the notebook in your backpack and head to the cellars entrence. 
+        </p>
+    </div>
+</body>
+</html>
